@@ -570,14 +570,43 @@ console.log("----------ex17----------");
 
 const myBandListArray = ['Dire Straits', 'Kansas', 'Steely Dan'];
 
-let bandList = document.getElementById("test");
-
-console.log(bandList);
+const bandList = document.getElementById("band-list");
 
 function myBandList(array) {
-    for (const band in myBandListArray) {
-
+    for (let i = 0; i < array.length; i++) {
+        let newBand = document.createElement('li');
+        newBand.innerHTML = array[i];
+        bandList.appendChild(newBand);
     }
 }
 
-//test changes test test test
+myBandList(myBandListArray);
+
+
+
+//ex 18
+/*Write a function called addMultTable(rows, cols) that will create a multiplication table like this.
+Start with an empty HTML page that only contains a level 1 heading.
+Your function should use the JavaScript DOM to insert an HTML table after the heading.
+
+For example, if I call: addMultTable(4, 8);
+It will create an HTML table with 4 rows and 8 columns, and append it after the level 1 heading.*/
+
+function addMultTable(rows, cols) {
+    let newTable = document.createElement('table');
+    document.body.appendChild(newTable);
+    for (let i = 1; i <= rows; i++) {
+        let newRow = document.createElement('tr');
+        newTable.appendChild(newRow);
+        for (let j = 1; j <= cols; j++) {
+            let newCol = document.createElement('td');
+            newCol.innerText = j*i;                       //writes numbers 1-8 in each row (for each col) just to check if everything worked out as expected
+            newCol.style.outline = '1px solid red';     //makes table cells visible (also just to check if it worked...)
+            newRow.appendChild(newCol);
+        }    
+    }
+}
+
+addMultTable(4, 8);
+
+//console.log(document);

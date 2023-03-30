@@ -538,6 +538,7 @@ function allEvenNumsBefore(num) {
     }
 }
 //didn't say the function should return anything, so it doesn't, it just prints
+//could also put all nums in an array and print or return this
 
 allEvenNumsBefore(9);
 

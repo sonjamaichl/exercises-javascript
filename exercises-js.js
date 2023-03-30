@@ -250,8 +250,21 @@ function reverseNum(num) {
 //after that the original number is divided by ten and rounded down to the next integer to access the next digit
 //before adding the new digit to the reversed number it is muliplied by 10 so adding it will actually make it the next digit of the number
 
+//solution with string/array methods
 console.log(reverseNum(x));
 console.log(reverseNum(y));
+
+function reverseNumString(num) {
+    num += '';
+   return num.split('').reverse().join('')*1; //multiplying *1 turns it into a number
+}
+
+
+
+console.log(reverseNumString(x));
+console.log(reverseNumString(y));
+
+//numbers with a 0 as last digit will not have a 0 as first digit, when reversed (keeping the 0 there only works if it's a string, not a number)
 
 
 
